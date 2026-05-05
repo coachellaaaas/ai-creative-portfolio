@@ -1,4 +1,4 @@
-# AI Creative Portfolio — Prompt+Play x Google Creative Lab
+# AI Creative Portfolio — [Prompt + Play] x Google Creative Lab
 
 A portfolio website showcasing **@create.withkatheryne** — a fully AI-generated lifestyle creator built from scratch using a custom generative AI pipeline.
 
