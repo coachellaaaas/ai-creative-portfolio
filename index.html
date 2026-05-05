@@ -419,6 +419,44 @@
     padding: 0.4rem 0.8rem;
   }
 
+  .reel-iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .reel-card:hover .reel-iframe {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .reel-card:hover .reel-info {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  .reel-info {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    transition: opacity 0.2s ease;
+  }
+  .reel-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(201,169,110,0.05);
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 4;
+    cursor: pointer;
+  }
+  .reel-card:hover .reel-overlay { opacity: 0; }
+
   /* Carousel arrows */
   .carousel-arrows {
     display: flex;
@@ -747,69 +785,74 @@
   <div class="reels-carousel-wrapper">
     <div class="reels-carousel" id="reelsCarousel">
 
-      <div class="reel-card reveal">
-        <a href="instagram://media?id=DTd90rdiPkW" onclick="window.location='https://www.instagram.com/reel/DTd90rdiPkW/'" target="_blank" rel="noopener">
-          <div class="reel-bg"></div>
+      <div class="reel-card reveal" data-video="K2MBrb0i66o">
+        <div class="reel-bg"></div>
+        <iframe class="reel-iframe" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <div class="reel-info">
           <span class="reel-number">01 / 05</span>
-          <div class="reel-overlay"><span class="reel-overlay-text">View ↗</span></div>
           <div class="reel-views">
             <div class="reel-views-num">7,993</div>
             <div class="reel-views-label">Views</div>
             <div class="reel-topic">Daily Life Vlog</div>
           </div>
-        </a>
+        </div>
+        <div class="reel-overlay" onclick="window.open('https://www.instagram.com/reel/DTd90rdiPkW/','_blank')"><span class="reel-overlay-text">View ↗</span></div>
       </div>
 
-      <div class="reel-card reveal">
-        <a href="instagram://media?id=DTBtvpUAJ8y" onclick="window.location='https://www.instagram.com/reel/DTBtvpUAJ8y/'" target="_blank" rel="noopener">
-          <div class="reel-bg" style="background: linear-gradient(135deg, #10150f 0%, #0d0d0d 100%);"></div>
+      <div class="reel-card reveal" data-video="Y1jgd9kODzw">
+        <div class="reel-bg" style="background: linear-gradient(135deg, #10150f 0%, #0d0d0d 100%);"></div>
+        <iframe class="reel-iframe" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <div class="reel-info">
           <span class="reel-number">02 / 05</span>
-          <div class="reel-overlay"><span class="reel-overlay-text">View ↗</span></div>
           <div class="reel-views">
             <div class="reel-views-num">7,975</div>
             <div class="reel-views-label">Views</div>
             <div class="reel-topic">Morning Routine</div>
           </div>
-        </a>
+        </div>
+        <div class="reel-overlay" onclick="window.open('https://www.instagram.com/reel/DTBtvpUAJ8y/','_blank')"><span class="reel-overlay-text">View ↗</span></div>
       </div>
 
-      <div class="reel-card reveal">
-        <a href="instagram://media?id=DTYfydUCKUg" onclick="window.location='https://www.instagram.com/reel/DTYfydUCKUg/'" target="_blank" rel="noopener">
-          <div class="reel-bg" style="background: linear-gradient(135deg, #0f1215 0%, #0d0d0d 100%);"></div>
+      <div class="reel-card reveal" data-video="3myuDFBI5tQ">
+        <div class="reel-bg" style="background: linear-gradient(135deg, #0f1215 0%, #0d0d0d 100%);"></div>
+        <iframe class="reel-iframe" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <div class="reel-info">
           <span class="reel-number">03 / 05</span>
-          <div class="reel-overlay"><span class="reel-overlay-text">View ↗</span></div>
           <div class="reel-views">
             <div class="reel-views-num">5,818</div>
             <div class="reel-views-label">Views</div>
             <div class="reel-topic">Tuesday Setup</div>
           </div>
-        </a>
+        </div>
+        <div class="reel-overlay" onclick="window.open('https://www.instagram.com/reel/DTYfydUCKUg/','_blank')"><span class="reel-overlay-text">View ↗</span></div>
       </div>
 
-      <div class="reel-card reveal">
-        <a href="instagram://media?id=DTWGupLCDz0" onclick="window.location='https://www.instagram.com/reel/DTWGupLCDz0/'" target="_blank" rel="noopener">
-          <div class="reel-bg" style="background: linear-gradient(135deg, #150f0a 0%, #0d0d0d 100%);"></div>
+      <div class="reel-card reveal" data-video="AVWl8Y_cDx4">
+        <div class="reel-bg" style="background: linear-gradient(135deg, #150f0a 0%, #0d0d0d 100%);"></div>
+        <iframe class="reel-iframe" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <div class="reel-info">
           <span class="reel-number">04 / 05</span>
-          <div class="reel-overlay"><span class="reel-overlay-text">View ↗</span></div>
           <div class="reel-views">
             <div class="reel-views-num">5,428</div>
             <div class="reel-views-label">Views</div>
             <div class="reel-topic">Grocery Day</div>
           </div>
-        </a>
+        </div>
+        <div class="reel-overlay" onclick="window.open('https://www.instagram.com/reel/DTWGupLCDz0/','_blank')"><span class="reel-overlay-text">View ↗</span></div>
       </div>
 
-      <div class="reel-card reveal">
-        <a href="instagram://media?id=DTTnF1OiEUn" onclick="window.location='https://www.instagram.com/reel/DTTnF1OiEUn/'" target="_blank" rel="noopener">
-          <div class="reel-bg" style="background: linear-gradient(135deg, #0f0f15 0%, #0d0d0d 100%);"></div>
+      <div class="reel-card reveal" data-video="ypdzpKeJUoc">
+        <div class="reel-bg" style="background: linear-gradient(135deg, #0f0f15 0%, #0d0d0d 100%);"></div>
+        <iframe class="reel-iframe" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <div class="reel-info">
           <span class="reel-number">05 / 05</span>
-          <div class="reel-overlay"><span class="reel-overlay-text">View ↗</span></div>
           <div class="reel-views">
             <div class="reel-views-num">5,209</div>
             <div class="reel-views-label">Views</div>
             <div class="reel-topic">AI Lifestyle Series</div>
           </div>
-        </a>
+        </div>
+        <div class="reel-overlay" onclick="window.open('https://www.instagram.com/reel/DTTnF1OiEUn/','_blank')"><span class="reel-overlay-text">View ↗</span></div>
       </div>
 
     </div>
@@ -912,6 +955,24 @@
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  // YouTube hover playback
+  document.querySelectorAll('.reel-card').forEach(card => {
+    const videoId = card.dataset.video;
+    const iframe = card.querySelector('.reel-iframe');
+    let hoverTimer;
+
+    card.addEventListener('mouseenter', () => {
+      hoverTimer = setTimeout(() => {
+        iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&modestbranding=1&playsinline=1&rel=0`;
+      }, 200);
+    });
+
+    card.addEventListener('mouseleave', () => {
+      clearTimeout(hoverTimer);
+      iframe.src = '';
+    });
   });
 
   // Carousel arrows
