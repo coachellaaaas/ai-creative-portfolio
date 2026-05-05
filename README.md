@@ -6,6 +6,14 @@ A portfolio website showcasing **@create.withkatheryne** — a fully AI-generate
 
 ---
 
+## Purpose
+
+This portfolio was built as part of an application for **Prompt+Play** — an in-person creative AI event hosted by [Anthropic](https://www.anthropic.com) and [Google Creative Lab](https://creativelab5.com/) in London (May 2026).
+
+Prompt+Play is run in conjunction with **The Creative Lab 5** — a one year paid collaboration at Google Creative Lab for early-career creatives working at the intersection of creativity and generative AI.
+
+---
+
 ## About the Project
 
 Katheryne Gilbert is a synthetic persona — no real person in front of the camera, no studio. Every frame is generated. Every routine is scripted. She doesn't exist, but her audience does.
@@ -22,10 +30,11 @@ The project began as an obsession with what AI tools could actually do in practi
 | 02 | Higgsfield (Nano Banana Pro) | Photorealistic image generation |
 | 03 | OpenArt | Avatar consistency and style variation |
 | 04 | Kling AI 2.6 | Motion control — copying movement from reference video |
-| 05 | HeyGen | Avatar lip-sync and talking-head sequences |
-| 06 | ElevenLabs | AI voice generation |
-| 07 | ChatGPT | Scripting routines and prompt engineering |
-| 08 | Canva | Carousel posts, reel covers, and branded assets |
+| 05 | Kling AI 2.5 | Movement generation from text prompts |
+| 06 | HeyGen | Avatar lip-sync and talking-head sequences |
+| 07 | ElevenLabs | AI voice generation |
+| 08 | ChatGPT | Scripting routines and prompt engineering |
+| 09 | Canva | Carousel posts, reel covers, and branded assets |
 
 ---
 
