@@ -61,15 +61,19 @@
     opacity: 0.4;
   }
 
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 4rem;
+  }
+
   /* NAV */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem 4rem;
+    padding: 2rem 0;
     border-bottom: 1px solid transparent;
     transition: border-color 0.3s ease, background 0.3s ease;
   }
@@ -107,7 +111,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 0 4rem 6rem;
+    padding: 0 0 6rem;
     position: relative;
     overflow: hidden;
   }
@@ -207,7 +211,7 @@
 
   /* SECTION COMMONS */
   section {
-    padding: 8rem 4rem;
+    padding: 8rem 0;
     position: relative;
   }
 
@@ -300,24 +304,47 @@
     border-color: var(--accent);
   }
 
-  /* REELS */
-  .reels-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+  /* REELS CAROUSEL */
+  .reels-carousel-wrapper {
+    position: relative;
     margin-top: 3rem;
+    overflow: hidden;
+  }
+
+  .reels-carousel {
+    display: flex;
+    gap: 1rem;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    padding-bottom: 1rem;
+    width: 100%;
   }
 
   .reel-card {
     position: relative;
-    aspect-ratio: 9/16;
+    flex: 0 0 calc((100% - 2rem) / 3);
+    aspect-ratio: 9 / 16;
     overflow: hidden;
     background: #111;
     border: 1px solid var(--border);
     transition: border-color 0.3s;
     cursor: none;
   }
-  .reel-card:hover { border-color: var(--accent); }
+  .reel-card:hover {
+    border-color: var(--accent);
+  }
+
+  @media (max-width: 768px) {
+    .reel-card {
+      flex: 0 0 calc((100% - 1rem) / 2);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .reel-card {
+      flex: 0 0 75vw;
+    }
+  }
 
   .reel-card a {
     display: block;
@@ -335,10 +362,10 @@
 
   .reel-number {
     position: absolute;
-    top: 1rem;
-    left: 1rem;
+    top: 0.8rem;
+    left: 0.8rem;
     font-family: 'DM Mono', monospace;
-    font-size: 0.55rem;
+    font-size: 0.65rem;
     letter-spacing: 0.15em;
     color: var(--accent);
     opacity: 0.6;
@@ -346,9 +373,9 @@
 
   .reel-views {
     position: absolute;
-    bottom: 1rem;
-    left: 1rem;
-    right: 1rem;
+    bottom: 0.8rem;
+    left: 0.8rem;
+    right: 0.8rem;
   }
   .reel-views-num {
     font-size: 1.8rem;
@@ -358,14 +385,14 @@
   }
   .reel-views-label {
     font-family: 'DM Mono', monospace;
-    font-size: 0.55rem;
+    font-size: 0.65rem;
     letter-spacing: 0.12em;
     color: var(--muted);
     text-transform: uppercase;
     margin-top: 0.2rem;
   }
   .reel-topic {
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-style: italic;
     color: var(--cream);
     margin-top: 0.3rem;
@@ -384,21 +411,42 @@
   .reel-card:hover .reel-overlay { opacity: 1; }
   .reel-overlay-text {
     font-family: 'DM Mono', monospace;
-    font-size: 0.6rem;
-    letter-spacing: 0.2em;
+    font-size: 0.55rem;
+    letter-spacing: 0.15em;
     color: var(--accent);
     text-transform: uppercase;
     border: 1px solid var(--accent);
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  /* Carousel arrows */
+  .carousel-arrows {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    justify-content: flex-end;
+  }
+  .carousel-arrow {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--accent);
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: none;
+    transition: all 0.2s;
+  }
+  .carousel-arrow:hover {
+    border-color: var(--accent);
+    background: rgba(201,169,110,0.08);
   }
 
   /* ABOUT */
   .about {
     border-top: 1px solid var(--border);
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 6rem;
-    align-items: start;
   }
 
   .about-title {
@@ -482,10 +530,7 @@
   /* FOOTER */
   footer {
     border-top: 1px solid var(--border);
-    padding: 2rem 4rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 2rem 0;
   }
   footer p {
     font-family: 'DM Mono', monospace;
@@ -575,6 +620,7 @@
 <div class="cursor-ring" id="cursorRing"></div>
 
 <nav id="nav">
+  <div class="container" style="display:flex; justify-content:space-between; align-items:center;">
   <div class="nav-logo">Portfolio — AI Creative</div>
   <ul class="nav-links">
     <li><a href="#experiment">Work</a></li>
@@ -582,11 +628,13 @@
     <li><a href="#about">About</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
+  <div class="container">
   <p class="hero-eyebrow">AI Creative Portfolio — 2026</p>
   <h1 class="hero-title">
     Building<br>
@@ -603,6 +651,7 @@
       <div class="hero-stat-label">Organic views<br>on AI content</div>
     </div>
   </div>
+  </div>
   <div class="scroll-line">
     <span>Scroll</span>
     <div class="scroll-line-bar"></div>
@@ -611,6 +660,7 @@
 
 <!-- EXPERIMENT -->
 <section class="experiment" id="experiment">
+  <div class="container">
   <div class="section-label">Featured Experiment</div>
   <div class="experiment-grid">
     <div>
@@ -691,80 +741,88 @@
 </section>
 
 <!-- REELS -->
-<section id="reels" style="border-top: 1px solid var(--border); padding-top: 6rem;">
+<section id="reels" style="border-top: 1px solid var(--border); padding: 6rem 0;">
+  <div class="container">
   <div class="section-label">Selected Work</div>
-  <div class="reels-grid">
+  <div class="reels-carousel-wrapper">
+    <div class="reels-carousel" id="reelsCarousel">
 
-    <div class="reel-card reveal">
-      <a href="https://www.instagram.com/reel/DTd90rdiPkW/?hl=en" target="_blank" rel="noopener">
-        <div class="reel-bg"></div>
-        <span class="reel-number">01 / 05</span>
-        <div class="reel-overlay"><span class="reel-overlay-text">View Reel ↗</span></div>
-        <div class="reel-views">
-          <div class="reel-views-num">7,993</div>
-          <div class="reel-views-label">Views</div>
-          <div class="reel-topic">Daily Life Vlog</div>
-        </div>
-      </a>
+      <div class="reel-card reveal">
+        <a href="instagram://media?id=DTd90rdiPkW" onclick="window.location='https://www.instagram.com/reel/DTd90rdiPkW/'" target="_blank" rel="noopener">
+          <div class="reel-bg"></div>
+          <span class="reel-number">01 / 05</span>
+          <div class="reel-overlay"><span class="reel-overlay-text">View ↗</span></div>
+          <div class="reel-views">
+            <div class="reel-views-num">7,993</div>
+            <div class="reel-views-label">Views</div>
+            <div class="reel-topic">Daily Life Vlog</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="reel-card reveal">
+        <a href="instagram://media?id=DTBtvpUAJ8y" onclick="window.location='https://www.instagram.com/reel/DTBtvpUAJ8y/'" target="_blank" rel="noopener">
+          <div class="reel-bg" style="background: linear-gradient(135deg, #10150f 0%, #0d0d0d 100%);"></div>
+          <span class="reel-number">02 / 05</span>
+          <div class="reel-overlay"><span class="reel-overlay-text">View ↗</span></div>
+          <div class="reel-views">
+            <div class="reel-views-num">7,975</div>
+            <div class="reel-views-label">Views</div>
+            <div class="reel-topic">Morning Routine</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="reel-card reveal">
+        <a href="instagram://media?id=DTYfydUCKUg" onclick="window.location='https://www.instagram.com/reel/DTYfydUCKUg/'" target="_blank" rel="noopener">
+          <div class="reel-bg" style="background: linear-gradient(135deg, #0f1215 0%, #0d0d0d 100%);"></div>
+          <span class="reel-number">03 / 05</span>
+          <div class="reel-overlay"><span class="reel-overlay-text">View ↗</span></div>
+          <div class="reel-views">
+            <div class="reel-views-num">5,818</div>
+            <div class="reel-views-label">Views</div>
+            <div class="reel-topic">Tuesday Setup</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="reel-card reveal">
+        <a href="instagram://media?id=DTWGupLCDz0" onclick="window.location='https://www.instagram.com/reel/DTWGupLCDz0/'" target="_blank" rel="noopener">
+          <div class="reel-bg" style="background: linear-gradient(135deg, #150f0a 0%, #0d0d0d 100%);"></div>
+          <span class="reel-number">04 / 05</span>
+          <div class="reel-overlay"><span class="reel-overlay-text">View ↗</span></div>
+          <div class="reel-views">
+            <div class="reel-views-num">5,428</div>
+            <div class="reel-views-label">Views</div>
+            <div class="reel-topic">Grocery Day</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="reel-card reveal">
+        <a href="instagram://media?id=DTTnF1OiEUn" onclick="window.location='https://www.instagram.com/reel/DTTnF1OiEUn/'" target="_blank" rel="noopener">
+          <div class="reel-bg" style="background: linear-gradient(135deg, #0f0f15 0%, #0d0d0d 100%);"></div>
+          <span class="reel-number">05 / 05</span>
+          <div class="reel-overlay"><span class="reel-overlay-text">View ↗</span></div>
+          <div class="reel-views">
+            <div class="reel-views-num">5,209</div>
+            <div class="reel-views-label">Views</div>
+            <div class="reel-topic">AI Lifestyle Series</div>
+          </div>
+        </a>
+      </div>
+
     </div>
-
-    <div class="reel-card reveal">
-      <a href="https://www.instagram.com/reel/DTBtvpUAJ8y/?hl=en" target="_blank" rel="noopener">
-        <div class="reel-bg" style="background: linear-gradient(135deg, #10150f 0%, #0d0d0d 100%);"></div>
-        <span class="reel-number">02 / 05</span>
-        <div class="reel-overlay"><span class="reel-overlay-text">View Reel ↗</span></div>
-        <div class="reel-views">
-          <div class="reel-views-num">7,975</div>
-          <div class="reel-views-label">Views</div>
-          <div class="reel-topic">Morning Routine</div>
-        </div>
-      </a>
+    <div class="carousel-arrows">
+      <button class="carousel-arrow" id="prevBtn">←</button>
+      <button class="carousel-arrow" id="nextBtn">→</button>
     </div>
-
-    <div class="reel-card reveal">
-      <a href="https://www.instagram.com/reel/DTYfydUCKUg/?hl=en" target="_blank" rel="noopener">
-        <div class="reel-bg" style="background: linear-gradient(135deg, #0f1215 0%, #0d0d0d 100%);"></div>
-        <span class="reel-number">03 / 05</span>
-        <div class="reel-overlay"><span class="reel-overlay-text">View Reel ↗</span></div>
-        <div class="reel-views">
-          <div class="reel-views-num">5,818</div>
-          <div class="reel-views-label">Views</div>
-          <div class="reel-topic">Tuesday Setup</div>
-        </div>
-      </a>
-    </div>
-
-    <div class="reel-card reveal">
-      <a href="https://www.instagram.com/reel/DTWGupLCDz0/?hl=en" target="_blank" rel="noopener">
-        <div class="reel-bg" style="background: linear-gradient(135deg, #150f0a 0%, #0d0d0d 100%);"></div>
-        <span class="reel-number">04 / 05</span>
-        <div class="reel-overlay"><span class="reel-overlay-text">View Reel ↗</span></div>
-        <div class="reel-views">
-          <div class="reel-views-num">5,428</div>
-          <div class="reel-views-label">Views</div>
-          <div class="reel-topic">Grocery Day</div>
-        </div>
-      </a>
-    </div>
-
-    <div class="reel-card reveal">
-      <a href="https://www.instagram.com/reel/DTTnF1OiEUn/?hl=en" target="_blank" rel="noopener">
-        <div class="reel-bg" style="background: linear-gradient(135deg, #0f0f15 0%, #0d0d0d 100%);"></div>
-        <span class="reel-number">05 / 05</span>
-        <div class="reel-overlay"><span class="reel-overlay-text">View Reel ↗</span></div>
-        <div class="reel-views">
-          <div class="reel-views-num">5,209</div>
-          <div class="reel-views-label">Views</div>
-          <div class="reel-topic">AI Lifestyle Series</div>
-        </div>
-      </a>
-    </div>
-
   </div>
 </section>
 
 <!-- ABOUT -->
 <section class="about" id="about">
+  <div class="container" style="display:grid; grid-template-columns: 1fr 2fr; gap: 6rem; align-items: start;">
   <div>
     <div class="section-label">About</div>
     <h2 class="about-title reveal">
@@ -813,6 +871,7 @@
 
 <!-- CONTACT -->
 <section class="contact-section" id="contact">
+  <div class="container">
   <h2 class="contact-title reveal">
     Let's<br><em>build</em><br>something
   </h2>
@@ -820,11 +879,14 @@
   <a href="https://www.instagram.com/create.withkatheryne/?hl=en" target="_blank" class="contact-link reveal">
     View @create.withkatheryne ↗
   </a>
+  </div>
 </section>
 
 <footer>
-  <p>© 2026 — AI Creative Portfolio</p>
-  <p>Built with generative tools</p>
+  <div class="container" style="display:flex; justify-content:space-between; align-items:center; width:100%;">
+    <p>© 2026 — AI Creative Portfolio</p>
+    <p>Built with generative tools</p>
+  </div>
 </footer>
 
 <script>
@@ -852,7 +914,17 @@
     nav.classList.toggle('scrolled', window.scrollY > 50);
   });
 
-  // Reveal on scroll
+  // Carousel arrows
+  const carousel = document.getElementById('reelsCarousel');
+  const scrollAmount = carousel.querySelector('.reel-card').offsetWidth + 16;
+  document.getElementById('nextBtn').addEventListener('click', () => {
+    carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  });
+  document.getElementById('prevBtn').addEventListener('click', () => {
+    carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  });
+
+
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
